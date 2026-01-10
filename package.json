@@ -9,6 +9,22 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.8"
+    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/db": "^0.18.3",
+    "@astrojs/markdoc": "^0.15.10",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/node": "^9.5.1",
+    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/svelte": "^7.2.5",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.8",
+    "svelte": "^5.46.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@catppuccin/daisyui": "^2.1.1",
+    "daisyui": "^5.5.14"
   }
 }
