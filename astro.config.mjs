@@ -18,7 +18,9 @@ export default defineConfig({
   },
   integrations: [
     svelte(),
-    db(),
+    db({
+      mode: 'web',
+    }),
     markdoc(),
     mdx(),
     partytown(),
