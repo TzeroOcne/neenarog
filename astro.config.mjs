@@ -26,5 +26,5 @@ export default defineConfig({
     partytown(),
     sitemap()
   ],
-  adapter: cloudflare()
+  adapter: cloudflare(),
 });

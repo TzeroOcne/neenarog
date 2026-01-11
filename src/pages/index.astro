@@ -1,5 +1,6 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import banner from '$/banner 1x5.webp';
+import logo from '$/neenary-black.svg';
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 
@@ -8,5 +9,25 @@ import '../styles/global.css';
 ---
 
 <Layout>
-	<Welcome />
+  <img src={banner.src} alt="neenary banner" class="brightness-65">
+  <div id="border">
+    <div></div>
+    <img
+      class="w-36 bg-white rounded-full outline-solid outline-8 outline-black place-self-center absolute"
+      src={logo.src} alt="neenary logo"
+    >
+    <div></div>
+  </div>
 </Layout>
+
+<style>
+  @plugin "daisyui" {
+    themes: false;
+  };
+
+  #border {
+    div {
+      @apply border-y-4 border-primary;
+    }
+  }
+</style>
