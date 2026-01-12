@@ -1,0 +1,17 @@
+---
+import BlogHeaderLayout from "./BlogHeaderLayout.astro"
+import type { MarkdownLayoutProps } from 'astro';
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  author: string;
+  date: string;
+}>;
+---
+
+<BlogHeaderLayout {...Astro.props}>
+  <article class="prose mt-8">
+    <slot />
+  </article>
+</BlogHeaderLayout>

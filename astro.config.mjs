@@ -1,4 +1,5 @@
 // @ts-check
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import svelte from '@astrojs/svelte';
 import cloudflare from '@astrojs/cloudflare';
@@ -12,6 +13,11 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   vite: {
+    resolve: {
+      alias: {
+        '$': fileURLToPath(new URL('./src/assets/', import.meta.url)),
+      },
+    },
     plugins: [
       tailwindcss(),
     ],

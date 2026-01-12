@@ -1,0 +1,39 @@
+---
+import type { MarkdownLayoutProps } from 'astro';
+import Layout from './Layout.astro';
+import banner from '$/banner.webp';
+import '@/styles/blog.css';
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  author: string;
+  date: string;
+}>;
+const { frontmatter } = Astro.props;
+---
+
+<title>
+  {frontmatter.title}
+</title>
+<Layout>
+  <div class="flex flex-col">
+    <div id="content-container" class="h-fit w-2/3 place-self-center">
+      <img src={banner.src} alt="banner">
+
+      <div class="card w-3/4 place-self-center -top-8 px-8 bg-base-100">
+        <span class="card-body items-center">
+          <h1 class="card-title">{frontmatter.title}</h1>
+          <h2>
+            Written by: <span class="font-bold">Tzero Ocne</span> on <span class="font-bold">2026-01-12</span>
+          </h2>
+        </span>
+        <div class="border border-white"></div>
+        <slot/>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+</style>
