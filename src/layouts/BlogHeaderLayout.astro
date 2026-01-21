@@ -8,13 +8,13 @@ type Props = MarkdownLayoutProps<{
   // Define frontmatter props here
   title: string;
   author: string;
-  date: string;
+  pubDate: string;
 }>;
-const { frontmatter } = Astro.props;
+const { frontmatter: fm } = Astro.props;
 ---
 
 <title>
-  {frontmatter.title}
+  {fm.title}
 </title>
 <Layout>
   <div class="flex flex-col">
@@ -23,9 +23,9 @@ const { frontmatter } = Astro.props;
 
       <div class="card w-3/4 place-self-center -top-8 px-8 bg-base-100">
         <span class="card-body items-center">
-          <h1 class="card-title">{frontmatter.title}</h1>
+          <h1 class="card-title">{fm.title}</h1>
           <h2>
-            Written by: <span class="font-bold">Tzero Ocne</span> on <span class="font-bold">2026-01-12</span>
+            Written by: <span class="font-bold">Tzero Ocne</span> on <span class="font-bold">{(new Date(fm.pubDate)).toLocaleDateString()}</span>
           </h2>
         </span>
         <div class="border border-white"></div>
